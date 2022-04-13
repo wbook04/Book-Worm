@@ -7,7 +7,7 @@ import { io } from 'socket.io-client';
 
 
 
-const endpoint = "http://localhost:8000";
+const endpoint = "https://bookworm04.herokuapp.com/";
 var socket, selectedChatCompare;
 
 var generatedChatId = "";
