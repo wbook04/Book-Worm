@@ -1,6 +1,9 @@
+
 import React, { useState, useEffect } from 'react'
 import { Navigate } from 'react-router-dom';
 import Latest from './Latest';
+
+
 
 
 function ChangeType(type, setAnotherType, userId){
@@ -29,6 +32,8 @@ function Home(props) {
 
     const [latest,  setLatest] = useState("");
     const [anotherType, setAnotherType] = useState("");
+    const [searchArr, setSearchArray] = useState("");
+    const [renderSearchArr, setRenderSearchArray] = useState("");
     
     
     useEffect(() => {
@@ -43,6 +48,7 @@ function Home(props) {
             const datajson = await apiResponse.json();
             console.log("home data", datajson["Data"])
             setLatest(<Latest type = "Latest" data = {datajson["Data"]}/>);
+            setSearchArray(datajson["Data"]);
         }
 
         fetchData();
@@ -104,8 +110,33 @@ function Home(props) {
 
 
 
+
   </div>
+  
+<input type="text" id="searchBar" onKeyUp={()=>{
+     let input = document.getElementById('searchBar');
+     input=input.value.toLowerCase();
+     let x = searchArr
+     const data = [];
+
+       
+     for (let i = 0; i < x.length; i++) { 
+         if (x[i]["Title"].toLowerCase().includes(input)) {
+            data.push(x[i])         
+         }
+     }
+ 
+     setRenderSearchArray(<Latest type = {"Searched Title"} data = {data}/>)
+
+
+
+}}placeholder="Search for names.." title="Type in a name"/>
+
+
   </div>
+  {
+      renderSearchArr
+  }
   {
       anotherType
   }
