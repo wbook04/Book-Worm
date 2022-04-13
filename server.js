@@ -81,6 +81,12 @@ app.post("/api/newChatData/:chatUserId", urlencodedParser,function(req, res){
             "message": "IDS_CANNOT_BE_SAME"
         })
     }
+    else if(newUserId === undefined || logedInUser === undefined){
+        res.json({
+            "message": "Enter the valid ID"
+        })
+
+    }
     else{
         run()
     }
