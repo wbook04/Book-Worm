@@ -112,12 +112,18 @@ function Home(props) {
 
 
   </div>
-  
-<input type="text" id="searchBar" onKeyUp={()=>{
+  <nav class="navbar navbar-light bg-light">
+
+
+<input class="form-control mr-sm-4" type="text" id="searchBar" onKeyUp={()=>{
      let input = document.getElementById('searchBar');
      input=input.value.toLowerCase();
      let x = searchArr
      const data = [];
+     if(input == ""){
+         setRenderSearchArray([])
+     }
+     else{
 
        
      for (let i = 0; i < x.length; i++) { 
@@ -127,11 +133,13 @@ function Home(props) {
      }
  
      setRenderSearchArray(<Latest type = {"Searched Title"} data = {data}/>)
-
+    }
 
 
 }}placeholder="Search for names.." title="Type in a name"/>
 
+</nav>
+  
 
   </div>
   {
