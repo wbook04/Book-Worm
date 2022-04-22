@@ -96,7 +96,7 @@ function Write(props) {
   </div>
   
   <div className="form-group">
-    <label for="exampleFormControlTextarea1"><h5>Discription</h5></label>
+    <label for="exampleFormControlTextarea1"><h5>Description</h5></label>
     <textarea className="form-control is-invalid" id="Discription" rows="3"></textarea>
   </div>
 

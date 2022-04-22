@@ -128,7 +128,7 @@ function SignUp(props) {
 </div>
 <div class="form-check">
     <input type="radio" class="form-check-input" value = "Writter" checked="checked" name = "UserTypeCheck" id="exampleCheck12"/>
-    <label class="form-check-label UserTypeCheck" for="UserTypeCheck" value = "Writter">Writter</label>
+    <label class="form-check-label UserTypeCheck" for="UserTypeCheck" value = "Writter">Writer</label>
   
   
   
